@@ -1,0 +1,122 @@
+DOCTYPE html>
+<html>
+<head>
+<title>For Someone Special ❤️</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial;
+    text-align:center;
+    background:#ffdde1;
+    overflow:hidden;
+}
+
+/* Heart animation */
+.heart{
+    position:absolute;
+    color:red;
+    font-size:20px;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-10vh);
+        opacity:0;
+    }
+}
+
+.container{
+    margin-top:80px;
+}
+
+img{
+    width:200px;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+h1{
+    color:#ff2e63;
+}
+
+button{
+    padding:12px 25px;
+    font-size:18px;
+    margin:15px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+#yes{
+    background:#28a745;
+    color:white;
+}
+
+#no{
+    background:#ff4d4d;
+    color:white;
+    position:relative;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Hey Vrinda(Madamji) ❤️</h1>
+
+<img src="https://img.sanishtech.com/u/d0361ea907415d749815828a7ae2395d.jpg">
+
+<h2>I have something to ask you...</h2>
+<h2>Will you be my special person? 💖</h2>
+
+<button id="yes" onclick="yesClicked()">Yes 😊</button>
+<button id="no" onmouseover="moveButton()">No 😅</button>
+
+</div>
+
+<script>
+
+/* Yes button message */
+function yesClicked(){
+    alert("Hi humari pyari madamji 😉 umid rakhte aap humara message santi se padhegi.I had crush on you since std 8 and on this special day I am confessing my feeling to you ️.Since I had started talking with you my days were becoming memorable you  became my medicine for frustration and tension💝.Always when I talk with you make my day special💞 .You really made my days better .You mean to me as the most lovable person.😊You are very special for me.Will you be my special? I love you 💝💟😘");
+}
+
+/* No button run away */
+function moveButton(){
+    var button = document.getElementById("no");
+    button.style.position = "absolute";
+    button.style.left = Math.random()*400 + "px";
+    button.style.top = Math.random()*400 + "px";
+}
+
+/* Floating hearts */
+function createHeart(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤";
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.fontSize = Math.random()*20 + 10 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },6000);
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
